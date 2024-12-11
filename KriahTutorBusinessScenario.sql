@@ -38,6 +38,16 @@ Questions:
 5)  Can the location of one student's session vary from one day to the next?
 	yes
 
+first name varchar (15) not null not blank
+last name varchar (20) not null not blank
+session date date unique per day and student not null not blank
+session number tinyint not null
+session minutes tinyint not null
+session location varcharn(25) not null not blank
+payment amount decimal (5,2) not null not blank
+payment paid varchar (6) check constraint 6_ not null not blank
+
+
 sample data:
 Shalom Feder, 12/01/2024, session 1, 30 min, Feder home, $58.50, paid
 Shalom Feder, 12/02/2024, session 2, 30 min, Feder home, $58.50, paid
@@ -76,4 +86,8 @@ Aviva Schwartz, 11/13/2024, session 8, 30 min, Tutor home, $45.00, unpaid
 Aviva Schwartz, 11/17/2024, session 9, 30 min, Tutor home, $45.00, unpaid
 Aviva Schwartz, 11/18/2024, session 10, 30 min, Tutor home, $45.00, unpaid
 Aviva Schwartz, 11/19/2024, session 11, 30 min, Tutor home, $45.00, unpaid
-Aviva Schwartz, 11/20/2024, session 12, 30 min, Tutor home, $45.00, unpaid*/
+Aviva Schwartz, 11/20/2024, session 12, 30 min, Tutor home, $45.00, unpaid
+*/
+
+
+select * from KriahSessions
