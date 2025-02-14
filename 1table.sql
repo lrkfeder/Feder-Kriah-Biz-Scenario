@@ -29,7 +29,7 @@ create table dbo.Kriah(
      
     --constraint if location is students home, payment owed = sessionminutes * 1.50 plus an additional 30%
     --constraint/computed column , payment owed = sessionminutes * 1.50 , otherwise its 0, cant be a/t in btwn
-    --all sessions with the same studentfirst and lastname must have the same sessionminutes
+    --all sessions with the same studentfirst and lastname must have the same sessionminutes????????
     --all sessions with the same student first and lastname must be on different dates
 )
 go 
