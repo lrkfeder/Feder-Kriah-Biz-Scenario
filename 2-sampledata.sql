@@ -1,6 +1,9 @@
 use KriahDB
 go
 
+delete KriahSessions
+go 
+
 insert KriahSessions(FirstName, LastName, SessionDate, SessionNumber, SessionTime, SessionLocation, PaymentPaid)
 select 'Shalom', 'Feder', '12/01/2024', 1, 30, 'Feder home', 'paid'
 union select 'Shalom', 'Feder', '12/02/2024', 2, 30, 'Feder home', 'paid'

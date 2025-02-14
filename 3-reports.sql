@@ -29,7 +29,7 @@ where PaymentPaid = 'paid'
 group by FirstName, LastName
 
 --Show me how many weeks each student has been working with me, which student has been with me for the longest, and who is my most recent student (the data doesnt make total sence because it apears that some students have stopped coming but it should work to ignore that)
-select k.FirstName, k.LastName, WeeksWorkingWith = max(DATEDIFF (week, k.SessionDate, getdate()))
+select k.FirstName, k.LastName, WeeksWorkingWith = DATEDIFF (week, min(k.SessionDate), max(k.SessionDate))
 from KriahSessions k
 group by FirstName, LastName
 
