@@ -13,7 +13,7 @@ create table dbo.KriahSessions(
 	SessionID int identity primary key not null,
 	FirstName varchar (15) not null constraint ck_kriah_sessions_first_name_cannot_be_blank check (FirstName <> ''),
 	LastName varchar (20) not null constraint ck_kriah_sessions_last_name_cannot_be_blank check (LastName <> ''),
-	SessionDate date,
+	SessionDate date constraint ck_session_date_must_be_after_sep_1_and_not_in_the_future check(SessionDate between '1/1/2024' and getdate()),
 	SessionNumber tinyint not null constraint ck_kriah_session_number_must_be_greater_than_zero check (SessionNumber > 0),
 	SessionTime tinyint not null constraint ck_kriah_session_time_must_be_greater_than_zero check(SessionTime > 0),
 	SessionLocation varchar (25) not null constraint ck_kriah_sessions_location_cannot_be_blank check (SessionLocation <> ''),
